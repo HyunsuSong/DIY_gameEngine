@@ -37,10 +37,6 @@ public :
 
 	virtual void shutDown() override
 	{
-		glDeleteBuffers(1, &vertexbuffer);
-		glDeleteBuffers(1, &uvbuffer);
-		glDeleteBuffers(1, &normalbuffer);
-
-		glDeleteTextures(1, &Texture);
+		RenderableObject::shutDown();
 	}
 };

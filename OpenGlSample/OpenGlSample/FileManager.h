@@ -42,16 +42,6 @@ struct PackedVertex {
 private:
 
 public:
-	GLFWwindow* window;
-	GLuint VertexArrayID;
-	GLuint programID;
-	GLuint MatrixID;
-	GLuint TextureID;
-
-	FileManager();
-
-	bool isEND();
-
 	bool getSimilarVertexIndex_fast(
 		PackedVertex & packed,
 		std::map<PackedVertex, unsigned short> & VertexToOutIndex,
@@ -82,5 +72,4 @@ public:
 	void SetObject(RenderableObject* src, float x, float y, float z);
 	void SetObject(NonRenderObject* src, float x, float y, float z);
 
-	void SetShader(const char* vs, const char* fs);
 };

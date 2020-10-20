@@ -16,7 +16,8 @@ int main(void)
 	NonRenderObject* Cube = new NonRenderObject();
 	SphereObject* Sphere = new SphereObject();
 
-	Mgr->SetShader("송현수_20161642_vs.shader", "송현수_20161642_fs.shader");
+	Render->SetShader("송현수_20161642_vs.shader", "송현수_20161642_fs.shader");
+
 
 	Mgr->GetData(Mecury, "금성.DDS", "sphere.obj");
 	Mgr->GetData(Cube, "태양.DDS", "cube.obj");
@@ -24,19 +25,18 @@ int main(void)
 	Mgr->SetObject(Mecury, 2.0f, 0.0f, 0.0f);
 	Mgr->SetObject(Sphere, -1.0f, 0.0f, 0.0f);
 
-	do {
-		Render->SetDraw(Mgr);
+	Render->addObject(Mecury);
+	Render->addObject(Sphere);
 
-		Render->DrawObject(Mgr, Mecury);
-		Render->DrawObject(Mgr, Sphere);
+	do 
+	{
+		Render->Update(Cube);
+
+		Render->render();
 	}
-	while (Mgr->isEND());
+	while (Render->isEND());
 
 	Render->shutDown();
-
-	Mecury->shutDown();
-	Sphere->shutDown();
-	Cube->shutDown();
 
 	delete Cube;
 	delete Sphere;

@@ -367,6 +367,8 @@
     <ClInclude Include="include\GL\glew.h" />
     <ClInclude Include="include\GL\glxew.h" />
     <ClInclude Include="include\GL\wglew.h" />
+    <ClInclude Include="IRender.h" />
+    <ClInclude Include="IUpdater.h" />
     <ClInclude Include="makeObject.h" />
     <ClInclude Include="NonRenderObject.h" />
     <ClInclude Include="Object.h" />

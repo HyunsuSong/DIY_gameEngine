@@ -1,9 +1,2 @@
-﻿  FileManager.cpp
-  NonRenderObject.cpp
-  RenderableObject.cpp
-  Renderer.cpp
-  SphereObject.cpp
-  makeObject.cpp
-  송현수_20161642_sphere.cpp
-  코드를 생성하고 있습니다...
-  OpenGlSample.vcxproj -> C:\Users\whdfk\OneDrive\문서\GitHub\새 폴더\게임엔진용 프로젝트 파일\OpenGlSample\x64\Debug\OpenGlSample.exe
+﻿  송현수_20161642_sphere.cpp
+  OpenGlSample.vcxproj -> C:\Users\whdfk\OneDrive\문서\GitHub\DIY_gameEngine\OpenGlSample\x64\Debug\OpenGlSample.exe
