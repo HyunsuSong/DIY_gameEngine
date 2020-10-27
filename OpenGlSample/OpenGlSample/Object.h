@@ -22,7 +22,8 @@ public:
 	bool isMove = false;
 
 	double alpha = 1.0;
-	double speed = 0.15;
+	double x_speed = 0.15;
+	double y_speed = 0.15;
 	double gliter_speed;
 	double area_min_x = -INFINITY;
 	double area_max_x = INFINITY;

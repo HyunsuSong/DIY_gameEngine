@@ -77,4 +77,6 @@ public:
 	void IsGliter(RenderableObject* src, bool isgliter, double speed);
 	void SetCharacter(RenderableObject* src);
 
+	void Moving(RenderableObject* src, double x_speed, double y_speed);
+
 };

@@ -121,35 +121,28 @@ public:
 				{
 					if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
 					{
-						a.at(i)->SetTranslate(0, a.at(i)->speed, 0);
+						a.at(i)->SetTranslate(0, a.at(i)->y_speed, 0);
 					}
 
 					if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
 					{
-						a.at(i)->SetTranslate(0, -a.at(i)->speed, 0);
+						a.at(i)->SetTranslate(0, -a.at(i)->y_speed, 0);
 					}
 
 					if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
 					{
-						a.at(i)->SetTranslate(a.at(i)->speed, 0, 0);
+						a.at(i)->SetTranslate(a.at(i)->x_speed, 0, 0);
 					}
 
 					if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS)
 					{
-						a.at(i)->SetTranslate(-a.at(i)->speed, 0, 0);
+						a.at(i)->SetTranslate(-a.at(i)->x_speed, 0, 0);
 					}
 				}
 
 				if (a.at(i)->isMove)
 				{
-					if (i % 2 == 0)
-					{
-						a.at(i)->IsPatrol(a.at(i)->speed, 0, 0);
-					}
-					else
-					{
-						a.at(i)->IsPatrol(0, a.at(i)->speed, 0);
-					}
+					a.at(i)->IsPatrol(a.at(i)->x_speed, a.at(i)->y_speed, 0);
 				}
 			}
 		}

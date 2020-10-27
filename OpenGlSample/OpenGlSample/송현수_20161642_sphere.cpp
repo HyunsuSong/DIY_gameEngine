@@ -22,13 +22,14 @@ int main(void)
 	makeObject* Mecury = new makeObject();
 	NonRenderObject* Cube = new NonRenderObject();
 
-	SphereObject* fast[size];
-	SphereObject* slow[size];
+	makeObject* fast[size];
+	makeObject* slow[size];
 
 	for (int i = 0; i < size; i++)
 	{
-		fast[i] = new SphereObject();
-		slow[i] = new SphereObject();
+		fast[i] = new makeObject();
+		Mgr->GetData(fast[i], "지구.DDS", "sphere.obj");
+		slow[i] = new makeObject();
 		Mgr->GetData(slow[i], "달.DDS", "sphere.obj");
 	}
 
@@ -49,8 +50,6 @@ int main(void)
 		Mgr->RandomSetObject(slow[i], -35, 35, -26, 26);
 
 		Mgr->SetObjectRange(slow[i], -35, 35, -26, 26);
-
-		slow[i]->isMove = true;
 	}
 
 	Mgr->IsGliter(Mecury, true, 0.001);
@@ -62,14 +61,20 @@ int main(void)
 	for (int i = 0; i < size; i++)
 	{
 		Render->addObject(fast[i]);
-
 	}
 
 	for (int i = 0; i < size; i++)
 	{
 		Render->addObject(slow[i]);
 
-		slow[i]->isMove = true;
+		if (i % 2 == 0)
+		{
+			Mgr->Moving(slow[i], 0, 0.15);
+		}
+		else
+		{
+			Mgr->Moving(slow[i], 0.1, 0.2);
+		}
 	}
 
 	do
@@ -83,6 +88,7 @@ int main(void)
 		{
 			if (fast[i]->collision_check)
 			{
+				//셧다운 시 어떻게 하면 객체를 지워줄 수 있는지 확인하기, 현재는 제대로 지워지지 않고 있음
 				fast[i]->shutDown();
 
 				Mecury->gliter_speed += 0.01;

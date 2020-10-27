@@ -399,3 +399,11 @@ void FileManager::SetCharacter(RenderableObject* src)
 {
 	src->IsCharacter = true;
 }
+
+void FileManager::Moving(RenderableObject* src, double x_speed, double y_speed)
+{
+	src->isMove = true;
+
+	src->x_speed = x_speed;
+	src->y_speed = y_speed;
+}
