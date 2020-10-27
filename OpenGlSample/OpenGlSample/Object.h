@@ -14,6 +14,22 @@ private:
 
 public:
 	bool res;
+	bool isPlus = false;
+	bool isGliter = false;
+	bool IsCharacter = false;
+	bool out_Area = false;
+	bool collision_check = false;
+	bool isMove = false;
+
+	double alpha = 1.0;
+	double speed = 0.15;
+	double gliter_speed;
+	double area_min_x = -INFINITY;
+	double area_max_x = INFINITY;
+	double area_min_y = -INFINITY;
+	double area_max_y = INFINITY;
+	glm::vec3 object_pos = glm::vec3(0, 0, 0);
+
 	GLuint Texture;
 	GLuint vertexbuffer;
 	GLuint uvbuffer;

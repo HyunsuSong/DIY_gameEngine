@@ -10,6 +10,7 @@ in vec3 Position_worldspace2;
 in vec3 Normal_cameraspace2;
 in vec3 EyeDirection_cameraspace2;
 in vec3 LightDirection_cameraspace2;
+in float L_p;
 
 // Ouput data
 out vec3 color;
@@ -21,6 +22,7 @@ uniform vec3 LightPosition_worldspace;
 uniform vec3 LightPosition_worldspace2;
 
 void main() {
+	float L_p2 = L_p;
 
 	vec3 LightColor = vec3(1, 1, 1);
 	float LightPower = 25.0f;
@@ -51,5 +53,5 @@ void main() {
 	vec3 R2 = reflect(-l2, n2);
 	float cosAlpha2 = clamp(dot(E2, R2), 0, 1);
 	//조명 1 + 조명 2 + 주변광
-	color = (MaterialDiffuseColor * 1.0);
+	color = (MaterialDiffuseColor * L_p2);
 }

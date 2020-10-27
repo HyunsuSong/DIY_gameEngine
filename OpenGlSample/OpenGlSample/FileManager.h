@@ -69,7 +69,12 @@ public:
 	void GetData(RenderableObject* src, const char* obj, const char* dds);
 	void GetData(NonRenderObject* src, const char* obj, const char* dds);
 
-	void SetObject(RenderableObject* src, float x, float y, float z);
+	void SetObjectRange(RenderableObject* src, float min_x, float max_x, float min_y, float max_y);
+	void SetObject(RenderableObject* src, double x, double y, double z);
 	void SetObject(NonRenderObject* src, float x, float y, float z);
+	void RandomSetObject(RenderableObject* src, int min_x, int max_x, int min_y, int max_y);
+	void SetAlpha(RenderableObject* src, float a);
+	void IsGliter(RenderableObject* src, bool isgliter, double speed);
+	void SetCharacter(RenderableObject* src);
 
 };

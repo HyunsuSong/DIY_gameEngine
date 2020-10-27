@@ -15,6 +15,7 @@ out vec3 Position_worldspace2;
 out vec3 Normal_cameraspace2;
 out vec3 EyeDirection_cameraspace2;
 out vec3 LightDirection_cameraspace2;
+out float L_p;
 
 // Values that stay constant for the whole mesh.
 uniform mat4 MVP;
@@ -23,6 +24,8 @@ uniform mat4 M;
 uniform vec3 LightPosition_worldspace;
 uniform mat4 M2;
 uniform vec3 LightPosition_worldspace2;
+uniform float Light;
+
 void main() {
 
 	// Output position of the vertex, in clip space : MVP * position
@@ -57,5 +60,5 @@ void main() {
 
 	Normal_cameraspace2 = (V * M2 * vec4(vertexNormal_modelspace, 0)).xyz;
 
-
+	L_p = Light;
 }
